@@ -2,7 +2,8 @@ local TocName, Env = ...
 local Copybara = LibStub("AceAddon-3.0"):NewAddon(TocName, "AceConsole-3.0", "AceEvent-3.0")
 Env.Addon = Copybara
 
-v, b, d, t = GetBuildInfo()
+_,_,_,t = GetBuildInfo()
+
 if tonumber(t) <= tonumber(40400) then
    Copybara.displayName = GetAddOnMetadata(TocName, "Title")
    Copybara.version = GetAddOnMetadata(TocName, "Version")
