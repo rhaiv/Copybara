@@ -1,7 +1,18 @@
 local TocName, Env = ...
 local Copybara = LibStub("AceAddon-3.0"):NewAddon(TocName, "AceConsole-3.0", "AceEvent-3.0")
 Env.Addon = Copybara
-Copybara.displayName = GetAddOnMetadata(TocName, "Title")
+
+v, b, d, t = GetBuildInfo()
+if tonumber(t) <= tonumber(40400) then
+   Copybara.displayName = GetAddOnMetadata(TocName, "Title")
+   Copybara.version = GetAddOnMetadata(TocName, "Version")
+   Copybara.author = GetAddOnMetadata(TocName, "Author")
+else
+   Copybara.displayName = C_Addons.GetAddOnMetadata(TocName, "Title")
+   Copybara.version = C_Addons.GetAddOnMetadata(TocName, "Version")
+   Copybara.author = C_Addons.GetAddOnMetadata(TocName, "Author")
+end
+
 setglobal("Copybara", Copybara)
 
 --local AceGUI = LibStub('AceGUI-3.0')
@@ -38,7 +49,7 @@ Options.constructor = {
    get = "Getter",
    args = {
       about = {
-         name = format("%s:%s by %s\n\n", GAME_VERSION_LABEL, GetAddOnMetadata(TocName, "Version"), GetAddOnMetadata(TocName, "Author")),
+         name = format("%s:%s by %s\n\n", GAME_VERSION_LABEL, Copybara.author, Copybara.author),
          type = "description",
          order = 0,
       },
