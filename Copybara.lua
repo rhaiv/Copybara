@@ -9,9 +9,9 @@ if tonumber(t) <= tonumber(40400) then
    Copybara.version = GetAddOnMetadata(TocName, "Version")
    Copybara.author = GetAddOnMetadata(TocName, "Author")
 else
-   Copybara.displayName = C_Addons.GetAddOnMetadata(TocName, "Title")
-   Copybara.version = C_Addons.GetAddOnMetadata(TocName, "Version")
-   Copybara.author = C_Addons.GetAddOnMetadata(TocName, "Author")
+   Copybara.displayName = C_AddOns.GetAddOnMetadata(TocName, "Title")
+   Copybara.version = C_AddOns.GetAddOnMetadata(TocName, "Version")
+   Copybara.author = C_AddOns.GetAddOnMetadata(TocName, "Author")
 end
 
 setglobal("Copybara", Copybara)
