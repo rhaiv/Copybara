@@ -4,7 +4,7 @@ Env.Addon = Copybara
 
 local _,_,_,t = GetBuildInfo()
 
-if tonumber(t) <= tonumber(40400) then
+if tonumber(t) < tonumber(40400) then
    Copybara.displayName = GetAddOnMetadata(TocName, "Title")
    Copybara.version = GetAddOnMetadata(TocName, "Version")
    Copybara.author = GetAddOnMetadata(TocName, "Author")
